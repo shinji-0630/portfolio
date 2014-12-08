@@ -137,6 +137,13 @@ $(function(){
     var ua = ua_check();
     if(ua.Touch){
       //touch_device
+      $('#creative .c-box').click(function(){
+        var $content = $(this).find('.c-over').clone();
+        $overWrap.append($content);
+        $content.ready(function(){
+          $overlay.animate({opacity:'show'});
+        });
+      });
     }else{
       $('#creative .c-box').mouseenter(function(){
         $('.box-wrap',this).animate({opacity:'show'});
@@ -156,14 +163,11 @@ $(function(){
         $overlay.animate({opacity:'show'});
       });
     });
-    $overlay.click(function(e){
+    $('#close > a').click(function(e){
       e.preventDefault();
       $('.c-over',$overWrap).remove().promise().done(function(){
       $overlay.animate({opacity:'hide'});
       });
-    });
-    ('.over-right a',$overWrap).click(function(e){
-      e.stopPropagation();
     });
   }
 

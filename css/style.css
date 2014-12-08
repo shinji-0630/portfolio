@@ -1,0 +1,463 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/*init*/
+html {
+  font-size: 75%;
+  line-height: 1.75em;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+a:hover {
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  color: #999;
+}
+
+body {
+  font-family: 'Droid Serif',"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",YuGothic, '游ゴシック',"メイリオ",Meiryo,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+/*common*/
+#header {
+  overflow: hidden;
+  *zoom: 1;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+}
+.top #header {
+  display: none;
+}
+#header #menu {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  *zoom: 1;
+  display: block;
+  text-align: right;
+  padding-right: 20px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#header #menu li {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  white-space: nowrap;
+}
+#header #menu li {
+  font-size: 1.5em;
+  line-height: 2.33333em;
+  padding: 0 10px;
+}
+#header #menu .active {
+  color: #999;
+}
+
+#wrapper {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 41px 0 0;
+}
+#wrapper #creative {
+  position: absolute;
+}
+#wrapper #about {
+  position: absolute;
+}
+
+.title {
+  font-size: 3em;
+  line-height: 1.16667em;
+  border-bottom: solid 2px #000;
+}
+.title span {
+  display: inline-block;
+  padding-left: 20px;
+}
+
+#loading {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#loading img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -16px;
+  margin-left: -16px;
+}
+
+#overlay {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=95);
+  opacity: 0.95;
+  color: #fff;
+  display: none;
+  background-color: #000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 30px;
+  z-index: 3;
+}
+#overlay #close {
+  bottom: 40px;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+}
+#overlay #close a {
+  font-size: 1.25em;
+  line-height: 1.4em;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  color: #fff;
+  border: solid 3px #fff;
+  display: inline-block;
+  padding: 8px 24px;
+}
+#overlay #close a:hover {
+  color: #aaa;
+  border: solid 3px #aaa;
+}
+#overlay .c-over {
+  padding: 20px;
+  overflow: hidden;
+  *zoom: 1;
+}
+#overlay .c-over .over-left {
+  float: left;
+  width: 50%;
+  text-align: center;
+}
+#overlay .c-over .over-right {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  float: right;
+  padding: 10px;
+  width: 50%;
+}
+#overlay .c-over .over-right h2 {
+  font-size: 1.75em;
+  line-height: 2em;
+}
+#overlay .c-over .over-right h3 {
+  font-size: 1.5em;
+  line-height: 2.33333em;
+}
+#overlay .c-over .over-right h3 a {
+  color: #fff;
+  text-decoration: underline;
+}
+#overlay .c-over .over-right p {
+  font-size: 1.25em;
+  line-height: 1.4em;
+}
+
+/*top*/
+#top {
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+#top h1 {
+  font-size: 6em;
+  line-height: 1.16667em;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  top: 20%;
+  width: 100%;
+  padding-left: 20px;
+}
+#top ul {
+  font-size: 3em;
+  line-height: 1.16667em;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  *zoom: 1;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  text-align: right;
+  top: auto;
+  position: absolute;
+  bottom: 10%;
+  padding-right: 20px;
+  width: 100%;
+}
+#top ul li {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  white-space: nowrap;
+}
+
+/*creative*/
+#creative {
+  display: none;
+}
+#creative #c-contents {
+  overflow: hidden;
+  *zoom: 1;
+  padding: 10px 20px;
+}
+#creative .c-box {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  position: relative;
+  width: 32%;
+  margin: 20px 0;
+}
+#creative .c-box .c-over {
+  display: none;
+}
+#creative .c-box .box-wrap {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  opacity: 0.8;
+  display: none;
+  background-color: #000;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+#creative .c-box .box-wrap a {
+  font-size: 5em;
+  line-height: 1.4em;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  margin: -50px 0 0 -50px;
+  display: inline-block;
+  color: #fff;
+  border: solid 10px #fff;
+  text-align: center;
+  vertical-align: middle;
+}
+#creative .child-1,
+#creative .child-4,
+#creative .child-7 {
+  margin: 20px 2%;
+}
+#creative img {
+  display: block;
+}
+
+/*about*/
+#about {
+  display: none;
+}
+#about #a-contents {
+  overflow: hidden;
+  *zoom: 1;
+  padding: 10px 20px;
+}
+#about br {
+  display: none;
+}
+#about h2 {
+  font-size: 1.5em;
+  line-height: 2.33333em;
+  border-left: solid 5px #000;
+  padding-left: 5px;
+  margin: 8px 0;
+}
+#about p {
+  font-size: 1.25em;
+  line-height: 1.4em;
+  font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",YuGothic, '游ゴシック',"メイリオ",Meiryo,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+}
+
+@media (max-width: 767px) {
+  /*common*/
+  #header #menu {
+    padding-right: 10px;
+  }
+
+  .title {
+    font-size: 2.5em;
+    line-height: 1.4em;
+  }
+  .title span {
+    padding-left: 10px;
+  }
+
+  #overlay #close {
+    top: 30px;
+    right: 10px;
+    text-align: right;
+  }
+  #overlay .c-over {
+    padding: 10px;
+  }
+  #overlay .c-over .over-left {
+    float: none;
+    width: 100%;
+  }
+  #overlay .c-over .over-right {
+    float: none;
+    width: 100%;
+  }
+  #overlay .c-over .over-right h2 {
+    font-size: 1.25em;
+    line-height: 1.4em;
+  }
+  #overlay .c-over .over-right h3 {
+    font-size: 1em;
+    line-height: 1.75em;
+  }
+  #overlay .c-over .over-right p {
+    font-size: 1em;
+    line-height: 1.75em;
+  }
+
+  #top h1 {
+    font-size: 5em;
+    line-height: 1.4em;
+  }
+  #top ul {
+    font-size: 2.5em;
+    line-height: 1.4em;
+  }
+
+  #creative #c-contents {
+    padding: 10px;
+  }
+  #creative .c-box {
+    width: 49%;
+  }
+  #creative .c-box:nth-child(2n) {
+    margin: 10px 0 10px 1%;
+  }
+  #creative .c-box:nth-child(2n-1) {
+    margin: 10px 1% 10px 0;
+  }
+  #creative .c-box .box-wrap a {
+    font-size: 3em;
+    line-height: 1.16667em;
+    width: 60px;
+    height: 60px;
+    margin: -30px 0 0 -30px;
+    border: solid 6px #fff;
+  }
+  #creative [class*="child"] {
+    margin: 0;
+  }
+
+  #about #a-contents {
+    padding: 10px;
+  }
+  #about br {
+    display: block;
+  }
+}

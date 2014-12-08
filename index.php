@@ -47,6 +47,7 @@
   <div id="overlay">
     <h1 class="title"><span>Explanation</span></h1>
     <div id="overlay-wrap"></div>
+    <div id="close"><a href="#">Close</a></div>
   </div>
   <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
   <script src="/js/common.js"></script>
