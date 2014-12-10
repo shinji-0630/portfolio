@@ -49,6 +49,8 @@
     <div id="overlay-wrap"></div>
     <div id="close"><a href="#">Close</a></div>
   </div>
+  <div id="overlay-opacity">
+  </div>
   <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
   <script src="/js/common.js"></script>
 </body>

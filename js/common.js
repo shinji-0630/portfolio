@@ -1,11 +1,12 @@
 $(function(){
   //page-check
   function pageCheck(){
-    if($('body').hasClass('top')){
+    $body = $('body');
+    if($body.hasClass('top')){
       return 'top';
-    }else if($('body').hasClass('creative')){
+    }else if($body.hasClass('creative')){
       return 'creative';
-    }else if($('body').hasClass('about')){
+    }else if($body.hasClass('about')){
       return 'about';
     }
   }
@@ -146,14 +147,15 @@ $(function(){
       });
     }else{
       $('#creative .c-box').mouseenter(function(){
-        $('.box-wrap',this).animate({opacity:'show'});
+        $('.box-wrap',this).stop().animate({opacity:'show'});
       });
       $('#creative .c-box').mouseleave(function(){
-        $('.box-wrap',this).animate({opacity:'hide'});
+        $('.box-wrap',this).stop().animate({opacity:'hide'});
       });
     }
     var $openBtn = $('.box-wrap a');
     var $overlay = $('#overlay');
+    var $overlayOpacity = $('#overlay-opacity');
     var $overWrap = $('#overlay-wrap');
     $openBtn.click(function(e){
       e.preventDefault();
@@ -161,16 +163,17 @@ $(function(){
       $overWrap.append($content);
       $content.ready(function(){
         $overlay.animate({opacity:'show'});
+        $overlayOpacity.animate({opacity:'show'});
       });
     });
     $('#close > a').click(function(e){
       e.preventDefault();
       $('.c-over',$overWrap).remove().promise().done(function(){
       $overlay.animate({opacity:'hide'});
+      $overlayOpacity.animate({opacity:'hide'});
       });
     });
   }
-
 
 
 });
