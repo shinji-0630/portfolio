@@ -143,6 +143,7 @@ $(function(){
         $overWrap.append($content);
         $content.ready(function(){
           $overlay.animate({opacity:'show'});
+          $overlayOpacity.animate({opacity:'show'});
         });
       });
     }else{
