@@ -141,6 +141,7 @@ img{
       }
       p{
         @include adjust-font-size-to(15px);
+        font-family:"ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",YuGothic, '游ゴシック',"メイリオ",Meiryo,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
       }
     }
   }

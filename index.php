@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="description" content="shinji sueyoshi portfolio for frontend engineer" />
-  <title>Portfolio</title>
+  <title>Shinji Sueyoshi Portfolio</title>
   <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
   <link href='/css/style.css' rel='stylesheet' type='text/css'>
 </head>
